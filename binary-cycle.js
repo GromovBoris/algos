@@ -1,7 +1,10 @@
+// БИНАРНЫЙ ПОИСК ЦИКЛОМ
+// O(log2n)
+
 let count = 0;
 let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-function linearSearch(arr, el) {
+function binarySearch(arr, el) {
   let start = 0;
   let end = arr.length;
   let found = false;
@@ -25,4 +28,4 @@ function linearSearch(arr, el) {
   return pos;
 }
 
-console.log(linearSearch(arr, 4), count);
+console.log(binarySearch(arr, 4), count);

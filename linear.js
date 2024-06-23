@@ -1,4 +1,8 @@
+// ЛИНЕЙНЫЙ ПОИСК ЦИКЛОМ
+// O(n)
+
 let count = 0;
+let arr = [1, 6, 8, 4, 6, 3, 7, 7, 9, 8, 65, 34, 7, 6];
 
 function linearSearch(arr, el) {
   let answer = [];
@@ -11,5 +15,4 @@ function linearSearch(arr, el) {
   return answer.length > 0 ? answer : "not found";
 }
 
-let arr = [1, 6, 8, 4, 6, 3, 7, 7, 9, 8, 65, 34, 7, 6];
 console.log(linearSearch(arr, 7), count);
