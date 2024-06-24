@@ -28,4 +28,4 @@ function binarySearch(arr, el) {
   return pos;
 }
 
-console.log(binarySearch(arr, 4), count);
+console.log(binarySearch(arr, 12), count);
