@@ -1,7 +1,10 @@
 // СОРТИРОВКА ВЫБОРОМ
 // O(n ^ 2)/2;
 
-let arr = [1, 6, 0, -43, 8, 4, 6, 3, 15, 7, 7, 9, -4, 8, 65, 34, 7, 12, 6];
+let arr = [
+  1, 6, 0, -43, 8, 4, 6, 3, 15, 7, 7, -45, 5, 87, 34, -4, -75, 34, 6, 785, 2345,
+  543, 2345, -2345, -65, -3, 4356,
+];
 let count = 0;
 
 function selectionSort(arr) {
@@ -19,4 +22,4 @@ function selectionSort(arr) {
   return arr;
 }
 
-console.log(selectionSort(arr), arr.length, count);
+console.log(selectionSort(arr), count);
