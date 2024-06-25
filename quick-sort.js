@@ -12,19 +12,20 @@ function quickSort(arr) {
     return arr;
   }
   let centerIndex = Math.floor(arr.length / 2);
-  let index = arr[centerIndex];
+  let centerEl = arr[centerIndex];
   let less = [];
   let greater = [];
   for (let i = 0; i < arr.length; i++) {
     count += 1;
     if (i === centerIndex) continue;
-    if (arr[i] < index) {
+    if (arr[i] < centerEl) {
       less.push(arr[i]);
     } else {
       greater.push(arr[i]);
     }
+    console.log(less, greater);
   }
-  return [...quickSort(less), index, ...quickSort(greater)];
+  return [...quickSort(less), centerEl, ...quickSort(greater)];
 }
 
 console.log(quickSort(arr), count);
