@@ -6,16 +6,15 @@ let count = 0;
 
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
-    let indexMin = i;
+    let min = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[indexMin]) {
-        indexMin = j;
+      if (arr[j] < arr[min]) {
+        min = j;
       }
       count += 1;
     }
-    let temp = arr[i];
-    arr[i] = arr[indexMin];
-    arr[indexMin] = temp;
+
+    [arr[i], arr[min]] = [arr[min], arr[i]];
   }
   return arr;
 }
