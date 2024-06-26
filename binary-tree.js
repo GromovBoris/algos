@@ -82,15 +82,37 @@ class binaryTree {
     }
   }
 
+  // ОБХОД В ГЛУБИНУ
+
   traverseDFS(callback, method) {
-    if ((method = "preOrder")) {
+    if (method === "preOrder") {
+      alert("DFS-PRE");
       return this.preOrder(this.root, callback);
     }
-    if ((method = "inOrder")) {
-      return this.preOrder(this.root, callback);
+    if (method === "inOrder") {
+      alert("DFS-IN");
+      return this.inOrder(this.root, callback);
     }
-    if ((method = "postOrder")) {
-      return this.preOrder(this.root, callback);
+    if (method === "postOrder") {
+      alert("DFS-POST");
+      return this.postOrder(this.root, callback);
+    }
+  }
+
+  // ОБХОД В ШИРИНУ
+
+  traverseBFS(callback) {
+    alert("BFS");
+    const queue = [this.root];
+    while (queue.length) {
+      const node = queue.shift();
+      callback(node);
+      if (node.left) {
+        queue.push(node.left);
+      }
+      if (node.right) {
+        queue.push(node.right);
+      }
     }
   }
 }
@@ -113,8 +135,12 @@ myTree.add(11);
 
 // myTree.traverseDFS((node) => console.log(node.value), "inOrder");
 
-// 8 7 5 2 6 9 10 20 11
+// 2 5 6 7 8 9 10 11 20
 
-myTree.traverseDFS((node) => console.log(node.value), "postOrder");
+// myTree.traverseDFS((node) => console.log(node.value), "postOrder");
 
-// 8 7 5 2 6 9 10 20 11
+// 2 6 5 7 11 20 10 9 8
+
+myTree.traverseBFS((node) => console.log(node.value));
+
+// 8 7 9 5 10 2 6 20 11
