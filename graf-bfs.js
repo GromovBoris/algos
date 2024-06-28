@@ -5,6 +5,7 @@ graph.c = ["d", "e"];
 graph.d = ["f"];
 graph.e = ["f"];
 graph.f = ["g"];
+graph.g;
 
 // console.log(graph);
 
@@ -14,7 +15,7 @@ function breadthSearch(graph, start, end) {
   let queue = [];
   queue.push(start);
   while (queue.length > 0) {
-    console.log(queue);
+    // console.log(queue);
     const current = queue.shift();
     if (!graph[current]) {
       graph[current] = [];
@@ -25,8 +26,9 @@ function breadthSearch(graph, start, end) {
     } else {
       queue = [...queue, ...graph[current]];
     }
+    console.log(current, queue, count);
   }
   return [way, count];
 }
 
-console.log(breadthSearch(graph, "a", ""));
+console.log(breadthSearch(graph, "a", "g"));
